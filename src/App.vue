@@ -29,12 +29,10 @@
         Ping Dota
       </b-button>
       <!-- v-if="resolvedPing !== 0" -->
-      <h2
-        id="pingText"
-      >
+      <span id="pingText">
         <!-- here is the text -->
         {{ resolvedPing.toFixed(2) }}
-      </h2>
+      </span>
     </div>
   </div>
 </template>
@@ -199,15 +197,25 @@ export default {
 		margin-top: 10px;
 	}
 	#pingText {
-		height: 50px;
+		/* height: 50px;
 		width: 0px;
 		margin-right: 20px;
 		margin-left: 20px;
 		display: inline-table;
-		justify-content: initial;
-    transition: all ease 0.5s;
+		justify-content: initial; */
+		width: 0px;
+		margin-right: 0px;
+		margin-left: 0px;
+		display: inline-block;
+		transition: all ease 0.5s;
+		vertical-align: middle;
+		overflow: hidden;
+		color: transparent;
 	}
 	.tapMeClass #pingText {
 		width: 50px;
+		color: black;
+		margin-right: 20px;
+		margin-left: 20px;
 	}
 </style>
