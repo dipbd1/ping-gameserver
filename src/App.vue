@@ -38,7 +38,6 @@
 </template>
 
 <script>
-import { ping } from '@network-utils/tcp-ping';
 import pingjs from 'web-pingjs';
 import networkService from './helpers/networkService';
 
@@ -99,7 +98,9 @@ export default {
     pingWithFetch() {
       const self = this;
       const firstProb = new Date();
-      fetch('https://playbattlegrounds.com/', { mode: 'no-cors' /* type: 'HEAD' */ })
+      fetch('https://playbattlegrounds.com/', {
+        mode: 'no-cors' /* type: 'HEAD' */,
+      })
         .then((resource) => {
           console.log(resource);
           const secondProb = new Date();
@@ -134,88 +135,8 @@ export default {
           console.log('From Error: ', self.pingValue);
         });
     },
-    // pingWithNpmModule() {
-    //   ping(
-    //     {
-    //       // The IP address or hostname of the host you want
-    //       // to ping. Defaults to 127.0.0.1 (localhost)
-    //       address: 'sgp-1.valve.net',
-    //       // How many times do you want want to
-    //       // attempt to reach the host? Default is 10
-    //       attempts: 10,
-    //       // What port do you want to connect on?
-    //       // Default is 80
-    //       port: 80,
-    //       // How long do you want to wait (in milliseconds)
-    //       // before assuming an attempt has failed?
-    //       // Default is 3000 (3 seconds)
-    //       timeout: 3000,
-    //     },
-    //     this.update,
-    //   ).then((result) => {
-    //     console.log('ping result:', result);
-    //   });
-    // },
-    // update(progress, total) {
-    //   console.log(progress, '/', total);
-    // },
   },
 };
 </script>
 
-<style>
-	#app {
-		font-family: Avenir, Helvetica, Arial, sans-serif;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-align: center;
-		color: #2c3e50;
-		margin-top: 1px;
-	}
-	#pingLogo {
-		width: 400px;
-		height: 400px;
-	}
-	#spinnerCSS {
-		font-family: Avenir, Helvetica, Arial, sans-serif;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-align: center;
-		color: #2c3e50;
-		margin-top: 1px;
-	}
-	/* #tapme h2 {
-		width: 0 !important;
-		transition: all ease 0.5s;
-	}
-	#tapme.tapMeClass h2 {
-		width: auto;
-	} */
-	#tapMe {
-		text-align: center;
-		color: #2c3e50;
-		margin-top: 10px;
-	}
-	#pingText {
-		/* height: 50px;
-		width: 0px;
-		margin-right: 20px;
-		margin-left: 20px;
-		display: inline-table;
-		justify-content: initial; */
-		width: 0px;
-		margin-right: 0px;
-		margin-left: 0px;
-		display: inline-block;
-		transition: all ease 0.5s;
-		vertical-align: middle;
-		overflow: hidden;
-		color: transparent;
-	}
-	.tapMeClass #pingText {
-		width: 50px;
-		color: black;
-		margin-right: 20px;
-		margin-left: 20px;
-	}
-</style>
+<style></style>
