@@ -1,39 +1,6 @@
 <template>
   <div>
-    <div id="app">
-      <img
-        id="pingLogo"
-        alt="Ping logo"
-        src="./assets/pingLogo.png"
-      >
-    </div>
-    <div id="spinnerCSS">
-      <b-spinner
-        v-if="spinner"
-        style="width: 3rem; height: 3rem;"
-        label="Large Spinner"
-        type="grow"
-      />
-    </div>
-    <div
-      id="tapMe"
-      :class="{ tapMeClass: isActive }"
-    >
-      <b-button
-        squared
-        variant="outline-danger"
-        @click="buttonState == 'stop' ? makePing('start') : makePing('stop')"
-      >
-        <!-- @click="makePing('start')" -->
-        <!-- here start the button -->
-        Ping Dota
-      </b-button>
-      <!-- v-if="resolvedPing !== 0" -->
-      <span id="pingText">
-        <!-- here is the text -->
-        {{ resolvedPing.toFixed(2) }}
-      </span>
-    </div>
+    <p>This is a vue Application</p>
   </div>
 </template>
 
